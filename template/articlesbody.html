@@ -1,0 +1,24 @@
+        <div id="main">
+		<ul>
+			<%  
+
+			if "<%= auth %>" == "N" then
+				ngx.print([[<a>auth:</a>]])
+				for k,v in pairs(<%= authtable %>) do
+ 					ngx.print([[<li><a href="]]..<%= domain %>..[[/articles.vv?auth=]]..v..[[">]]..v..[[</a></li>]])	
+				end
+			else
+				if "<%= title %>" == "N" then
+					for k,v in pairs(<%= authtitlestable %>) do
+						ngx.print([[<li><a href="]]..<%= domain %>..[[/articles.vv?auth=]]..[[<%= auth %>]]..[[&title=]]..v ..[[">]]..v..[[</a></li>]])
+					end					
+				else
+					ngx.print([[<a>]]..[[<%= title %>]]..[[</a>]])
+					ngx.print([[<p>]]..[[<%= contents %>]]..[[</p>]])
+
+				end
+			end
+			%>
+
+		</ul>
+        </div>

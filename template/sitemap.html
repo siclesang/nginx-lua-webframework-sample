@@ -1,0 +1,12 @@
+                <nav id="access" role="navigation">
+                        <div class="menu">
+                                <ul>
+				<% 
+				for k,v in pairs(<%= table %>) do
+                           		ngx.print([[ <li class="current_page_item"><a href="]]..<%= domain %>..[[/]]..v..[[.vv">]]..v..[[</a></li>]])
+				end
+				%>
+                                </ul>
+                        </div>
+                </nav><!-- #access -->
+        </header><!-- #branding -->
